@@ -6,7 +6,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
     $password = $_POST['password'];
 
     $query = "SELECT * FROM users WHERE username = '$username'and password='$password'";
-    $result = mysqli_query($connection, $query) or die (mysqli_eror($connection));
+    $result = mysqli_query($connection, $query) or die (mysqli_error($connection));
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {
